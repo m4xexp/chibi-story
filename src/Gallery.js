@@ -30,8 +30,8 @@ function Gallery() {
     }
 
     return (
-        <div className="Gallery">
-            <h1 id="gallery" className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl m-20">
+        <section className="Gallery px-2 py-6" id="gallery" >
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl m-10">
                 <span className="block" >Our Gallery</span>
                 <span className="block xl:inline" id="">Enjoy the best moment!</span>
             </h1>
@@ -40,7 +40,7 @@ function Gallery() {
                 {chibliElements}
             </ul>
             {chibliPost}
-        </div>
+        </section>
     )
 }
 
