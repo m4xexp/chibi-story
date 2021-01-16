@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Home from './Home';
 import Gallery from './Gallery';
 import Footer from './components/Footer';
+import About from './About';
+import Contact from './Contact';
 
 function App() {
 
@@ -10,7 +12,9 @@ function App() {
     <div className="App">
       <Nav />
       <Home />
+      <About />
       <Gallery />
+      <Contact />
       <Footer />
     </div>
   );
