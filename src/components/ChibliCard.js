@@ -1,6 +1,7 @@
 import React from 'react'
+import ChibliPost from './ChibliPost';
 
-function TattooItem(props) {
+function ChibliCard(props) {
 
     const { chibli,onChibliClick } = props;
 
@@ -14,4 +15,4 @@ function TattooItem(props) {
     )
 }
 
-export default TattooItem
+export default ChibliCard
