@@ -4,7 +4,7 @@ function ChibliCard(props) {
   const { chibli, onChibliClick } = props;
 
   return (
-    <li className="bg-white text-black hover:shadow-lg rounded transition-all ease-in-out delay-100 items-center flex flex-col justify-center">
+    <li className="bg-white text-black hover:shadow-lg rounded transition-all ease-in-out delay-100 items-center flex flex-col justify-center cursor-pointer">
       <img
         src={chibli.thumbnailUrl}
         alt=""

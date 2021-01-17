@@ -43,7 +43,13 @@ function Gallery(props) {
         </span>
       </h1>
       <SearchBar value={searchText} onValueChange={setSearchText} />
-      <ul className="grid lg:grid-cols-3 gap-6 px-12 md:grid-cols-2 grid-cols-1">
+      <ul
+        className={
+          chibliElements
+            ? "grid lg:grid-cols-3 gap-6 px-12 md:grid-cols-2 grid-cols-1"
+            : "grid grid-cols-1 gap-6 px-24"
+        }
+      >
         {chibliElements}
       </ul>
       {chibliPost}
