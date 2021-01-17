@@ -1,6 +1,9 @@
 import React from "react";
 
-function Nav() {
+function Nav(props) {
+
+  const { toggle } = props;
+
   return (
     <nav className="flex justify-between h-32 shadow items-center">
       <a href="/" className="pl-8 font-extrabold">
@@ -19,6 +22,7 @@ function Nav() {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M4 6h16M4 12h16M4 18h16"
+            onClick={toggle}
           />
         </svg>
       </div>

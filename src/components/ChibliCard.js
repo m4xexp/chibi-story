@@ -1,5 +1,4 @@
 import React from "react";
-import ChibliPost from "./ChibliPost";
 
 function ChibliCard(props) {
   const { chibli, onChibliClick } = props;
