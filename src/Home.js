@@ -47,10 +47,9 @@ function Home() {
                   </svg>
                 </Link>
                 <Link
-                  href="about"
                   className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600 cursor-pointer"
                   id=""
-                  to="gallery"
+                  to="about"
                   activeClass="active"
                   spy={true}
                   smooth={true}

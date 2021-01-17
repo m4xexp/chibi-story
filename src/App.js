@@ -6,6 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Dropdown from "./components/Dropdown";
 import React, { useState, useEffect } from "react";
+import TestData from "./components/TestData";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ function App() {
       <About />
       <Gallery />
       <Contact />
+      <TestData />
       <Footer />
     </div>
   );
