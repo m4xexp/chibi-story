@@ -3,7 +3,20 @@ import Gallery from "../Gallery";
 import axios from "axios";
 
 function Chiblis() {
-  const chiblis = [
+
+  // axios({
+  //   method: "get",
+  //   url: "http://localhost:5000/story",
+  // })
+  //   .then((res) => {
+  //     setStory(res.data[0]);
+  //     console.log("This is new Chibli", story);
+  //   })
+  //   .catch((err) => {
+  //     console.error(err);
+  //   });
+
+  const [story, setStory] = useState([
     {
       title: "Asleep Chibli",
       thumbnailUrl:
@@ -35,26 +48,25 @@ function Chiblis() {
       story:
         "กำลังง่วงๆ ซึมๆ เลยยิบกล้องใหญ่ขึ้นมา แล้วเรียก เจ้าตัวก็เลยหันมาแบบงงๆ",
     },
-  ];
+    {
+      _id: "600458f017fadb1d5f458748",
+      createdAt: "2021-01-17T15:34:08.060Z",
+      date: "2021-01-17T02:22:49.052Z",
+      story:
+        "กล่องอัลบั้ม BTS ที่คุณนายเพิ่งซื้อมาใหม่ มันหอมขนาดที่ต้องเข้าไปหลับซักงีบ",
+      thumbnailUrl:
+        "https://res.cloudinary.com/khaokruacooking/image/upload/v1610890247/image/chibli-in-box-crop_gsbjds.jpg",
+      title: "Chibli in the box",
+      updatedAt: "2021-01-17T15:34:08.060Z",
+    },
+  ]);
 
-  const [addStory, setAddStory] = useState({});
-
-  axios({
-    method: "get",
-    url: "http://localhost:5000/story",
-  })
-    .then((res) => {
-
-      chiblis.push(res.data[0]);
-      console.log("This is new Chibli", chiblis);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  
+  const pureStory = story;
 
   return (
     <div>
-      <Gallery chiblis={chiblis} />
+      <Gallery chiblis={pureStory} />
     </div>
   );
 }

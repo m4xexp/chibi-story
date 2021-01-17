@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import ChibliPost from "./components/ChibliPost";
-import chiblis from "./Data/Chibli";
 import ChibliCard from "./components/ChibliCard";
 
 function Gallery(props) {
   const { chiblis } = props;
-  // console.log('Chiblis new',chiblis);
   const [selectedChibli, setSelectedChibli] = useState(null);
   const [searchText, setSearchText] = useState("");
-
   const filteredText = chiblis.filter((chibli) => {
     return (
       chibli.date.includes(searchText) || chibli.title.includes(searchText)
     );
   });
-  // console.log(filteredText);
 
   const chibliElements = filteredText.map((chibli, index) => {
     return (
