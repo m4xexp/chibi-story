@@ -13,7 +13,7 @@ function ChibliCard(props) {
           onChibliClick(chibli);
         }}
       />
-      <h2 className="m-6">{chibli.title}</h2>
+      <h2 className="font-kanit font-medium m-6">{chibli.title}</h2>
     </li>
   );
 }

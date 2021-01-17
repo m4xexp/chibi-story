@@ -19,10 +19,10 @@ function SearchBar(props) {
           />
         </svg>
         <input
-          className="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10"
+          className="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10 font-kanit"
           type="text"
           value={value}
-          placeholder="Find what you want"
+          placeholder="อยากเห็นโมเม้นไหน ก็ค้นหาดูได้เล้ย"
           onChange={(event) => {
             onValueChange(event.target.value);
           }}

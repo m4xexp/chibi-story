@@ -9,7 +9,7 @@ function Gallery() {
   const [searchText, setSearchText] = useState("");
 
   const filteredText = chiblis.filter((chibli) => {
-    return chibli.title.includes(searchText);
+    return chibli.timestamp.includes(searchText) || chibli.title.includes(searchText);
   });
   // console.log(filteredText);
 
