@@ -1,6 +1,13 @@
 import React from "react";
+import { animateScroll as scroll } from "react-scroll";
 
 function Footer() {
+
+  function ScrollToTop() {
+    scroll.scrollToTop();
+    
+  };
+
   return (
     <footer className="text-gray-700 bg-white body-font">
       <div
@@ -95,8 +102,8 @@ function Footer() {
           </a>
 
           <a
-            href="#"
-            className="text-gray-400 hover:text-gray-500 animate-bounce"
+            onClick={ScrollToTop}
+            className="text-gray-400 hover:text-gray-500 animate-bounce cursor-pointer"
           >
             <span className="sr-only">ToTop</span>
             <svg

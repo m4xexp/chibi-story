@@ -1,14 +1,14 @@
 import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Nav(props) {
-
   const { toggle } = props;
 
   return (
     <nav className="flex justify-between h-32 shadow items-center">
-      <a href="/" className="pl-8 font-extrabold">
+      <Link to="/" className="pl-8 font-extrabold cursor-pointer">
         chibli gallery.
-      </a>
+      </Link>
       <div className="px-4 md:hidden cursor-pointer">
         <svg
           className="w-6 h-6"
@@ -27,18 +27,50 @@ function Nav(props) {
         </svg>
       </div>
       <div className="pr-8 md:block hidden">
-        <a href="#" className="p-4">
+        <Link
+          to="#"
+          className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
           Home
-        </a>
-        <a href="#about" className="p-4">
+        </Link>
+        <Link
+          to="about"
+          className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
           About
-        </a>
-        <a href="#gallery" className="p-4">
-          Images
-        </a>
-        <a href="#contact" className="p-4">
+        </Link>
+        <Link
+          to="gallery"
+          className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          Gallery
+        </Link>
+        <Link
+          to="contact"
+          className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
           Contact
-        </a>
+        </Link>
       </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function Dropdown(props) {
   const { isOpen, toggle } = props;
@@ -10,21 +11,52 @@ function Dropdown(props) {
           ? "grid grid-rows-4 text-center items-center bg-gray-100"
           : "hidden"
       }
-
       onClick={toggle}
     >
-      <a href="#" className="p-4">
+      <Link
+        to="#"
+        className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
         Home
-      </a>
-      <a href="#about" className="p-4">
+      </Link>
+      <Link
+        to="about"
+        className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
         About
-      </a>
-      <a href="#gallery" className="p-4">
-        Images
-      </a>
-      <a href="#contact" className="p-4">
+      </Link>
+      <Link
+        to="gallery"
+        className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
+        Gallery
+      </Link>
+      <Link
+        to="contact"
+        className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
         Contact
-      </a>
+      </Link>
     </div>
   );
 }
