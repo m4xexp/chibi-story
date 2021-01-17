@@ -17,6 +17,12 @@ function StoryData() {
         date: new Date()
     });
 
+    componentDidMount() {
+        this.setStory({
+            
+        })
+    }
+
     onChangeTitle(e) {
         setStory({
             title: e.target.value,

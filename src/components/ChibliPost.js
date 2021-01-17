@@ -36,7 +36,7 @@ function ChibliPost(props) {
         <p className="font-kanit text-center font-medium m-4">{chibli.story}</p>
         <p>
           <span className="font-kanit mt-3">ถ่ายเมื่อ</span>{" "}
-          <span className="font-kanit">{chibli.timestamp}</span>
+          <span className="font-kanit">{chibli.date}</span>
         </p>
       </div>
     </div>

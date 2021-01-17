@@ -4,12 +4,16 @@ import ChibliPost from "./components/ChibliPost";
 import chiblis from "./Data/Chibli";
 import ChibliCard from "./components/ChibliCard";
 
-function Gallery() {
+function Gallery(props) {
+  const { chiblis } = props;
+  // console.log('Chiblis new',chiblis);
   const [selectedChibli, setSelectedChibli] = useState(null);
   const [searchText, setSearchText] = useState("");
 
   const filteredText = chiblis.filter((chibli) => {
-    return chibli.timestamp.includes(searchText) || chibli.title.includes(searchText);
+    return (
+      chibli.date.includes(searchText) || chibli.title.includes(searchText)
+    );
   });
   // console.log(filteredText);
 

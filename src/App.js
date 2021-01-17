@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import Dropdown from "./components/Dropdown";
 import React, { useState, useEffect } from "react";
 import TestData from "./components/TestData";
+import Chiblis from "./Data/Chibli";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,8 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Home />
       <About />
-      <Gallery />
+      <Chiblis />
       <Contact />
-      <TestData />
       <Footer />
     </div>
   );
