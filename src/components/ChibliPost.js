@@ -5,7 +5,6 @@ function ChibliPost(props) {
 
   return (
     <div className="chibli-post fixed top-0 bottom-0 left-0 right-0 z-999 flex justify-center items-center ">
-      
       <div
         className="chibli-post-bg bg-black bg-opacity-75 top-0 absolute bottom-0 left-0 right-0"
         onClick={onChibliClose}
@@ -29,13 +28,16 @@ function ChibliPost(props) {
         <img
           src={chibli.thumbnailUrl}
           alt=""
-          className="block lg:max-w-xl md:max-w-md ml-auto mr-auto mt-4"
+          className="block lg:max-w-lg md:max-w-md ml-auto mr-auto mt-4"
         />
         <h4 className="text-black text-center font-semibold m-6 font-kanit">
           <span>"</span> {chibli.title} <span>"</span>
         </h4>
         <p className="font-kanit text-center font-medium m-4">{chibli.story}</p>
-        <p><span className="font-kanit mt-3">ถ่ายเมื่อ</span> <span className="font-kanit">{chibli.timestamp}</span></p>
+        <p>
+          <span className="font-kanit mt-3">ถ่ายเมื่อ</span>{" "}
+          <span className="font-kanit">{chibli.timestamp}</span>
+        </p>
       </div>
     </div>
   );
