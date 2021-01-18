@@ -4,7 +4,15 @@ import SearchBar from "./SearchBar";
 
 function BlogPost(props) {
   const { blogs, Total } = props;
-  console.log(blogs);
+  const [isActive, setIsActive] = useState([
+    {
+      Grid: true,
+    },
+    { Row: false },
+  ]);
+
+  //   console.log(isActive[0].Grid);
+
   const [searchBlog, setSearchBlog] = useState("");
   const filteredBlog = blogs.filter((blog) => {
     return (
@@ -20,6 +28,14 @@ function BlogPost(props) {
 
   const result = blogElements.length;
 
+  function activeGrid() {
+    setIsActive([{ Grid: true }, { Row: false }]);
+  }
+
+  function activeRow() {
+    setIsActive([{ Grid: false }, { Row: true }]);
+  }
+
   return (
     <section className="blog py-14 bg-white font-kanit" id="blog">
       <div className="container max-w-6xl mx-auto">
@@ -29,7 +45,7 @@ function BlogPost(props) {
         <p className="mt-2 text-lg text-center text-gray-600">
           เพราะเรื่องราว เราเก็บไว้ได้
         </p>
-        <div className="flex flex-row justify-between h-16 items-center ">
+        <div className="flex flex-row justify-between h-16 items-center mt-10">
           <div className="ml-12">
             <p className="text-medium text-black hidden sm:block">
               Showing
@@ -42,41 +58,55 @@ function BlogPost(props) {
             </p>
           </div>
           <div className="flex flex-row justify-between sm:justify-center items-center relative">
-            <svg
-              className="w-6 h-6 m-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              className="active:ring-1 active:bg-white bg-black"
+              onClick={activeGrid}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-              />
-            </svg>
-            <svg
-              className="w-6 h-6 m-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+              <svg
+                className="w-6 h-6 m-1 cursor-pointer text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                />
+              </svg>
+            </button>
+            <button className="active:light-blue-500" onClick={activeRow}>
+              <svg
+                className="w-6 h-6 m-1 cursor-pointer text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
             <div className="">
               <SearchBar value={searchBlog} onValueChange={setSearchBlog} />
             </div>
           </div>
         </div>
 
-        <ul className="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 py-10 xl:px-0 px-12">
+        <ul
+          className={
+            isActive[0].Grid
+              ? "grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 py-10 xl:px-0 px-12"
+              : "grid grid-cols-1"
+          }
+        >
           {blogElements}
         </ul>
       </div>
