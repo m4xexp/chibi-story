@@ -3,7 +3,7 @@ import Blog from "../pages/Blog";
 import SearchBar from "./SearchBar";
 
 function BlogPost(props) {
-  const { blogs } = props;
+  const { blogs, Total } = props;
   console.log(blogs);
   const [searchBlog, setSearchBlog] = useState("");
   const filteredBlog = blogs.filter((blog) => {
@@ -18,6 +18,8 @@ function BlogPost(props) {
     return <Blog key={index} blog={blog} />;
   });
 
+  const result = blogElements.length;
+
   return (
     <section className="blog py-14 bg-white font-kanit" id="blog">
       <div className="container max-w-6xl mx-auto">
@@ -27,8 +29,19 @@ function BlogPost(props) {
         <p className="mt-2 text-lg text-center text-gray-600">
           เพราะเรื่องราว เราเก็บไว้ได้
         </p>
-        <div className="flex flex-row justify-end h-16">
-          <div className="flex flex-row justify-between items-center relative">
+        <div className="flex flex-row justify-between h-16 items-center ">
+          <div className="ml-12">
+            <p className="text-medium text-black hidden sm:block">
+              Showing
+              <span className="font-medium mx-1">1</span>
+              to
+              <span className="font-medium mx-1">{result}</span>
+              of
+              <span className="font-medium mx-2">{result}</span>
+              results
+            </p>
+          </div>
+          <div className="flex flex-row justify-between sm:justify-center items-center relative">
             <svg
               className="w-6 h-6 m-1"
               fill="none"
@@ -57,7 +70,7 @@ function BlogPost(props) {
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-            <div className="h-auto">
+            <div className="">
               <SearchBar value={searchBlog} onValueChange={setSearchBlog} />
             </div>
           </div>

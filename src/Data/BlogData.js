@@ -65,9 +65,12 @@ function BlogData() {
     },
   ]);
 
+  const Total = dataBlog.length;
+  console.log("Length", Total);
+
   return (
     <div>
-      <BlogPost blogs={dataBlog} />
+      <BlogPost blogs={dataBlog} total={Total} />
     </div>
   );
 }
