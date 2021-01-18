@@ -1,6 +1,5 @@
 import Nav from "./components/Nav";
 import Home from "./Home";
-import Gallery from "./Gallery";
 import Footer from "./components/Footer";
 import About from "./About";
 import Contact from "./Contact";
@@ -8,7 +7,6 @@ import Dropdown from "./components/Dropdown";
 import React, { useState, useEffect } from "react";
 import Chiblis from "./Data/Chibli";
 import BlogData from "./Data/BlogData";
-import BlogPost from "./components/BlogPost";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
