@@ -36,7 +36,7 @@ function Gallery(props) {
 
   return (
     <section className="blog py-14 bg-white font-kanit" id="gallery">
-      <div className="container max-w-6xl mx-auto">
+      <div className="container max-w-5xl mx-auto">
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl m-10">
           <span className="block">Our Gallery</span>
           <span className="block xl:inline" id="">

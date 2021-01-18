@@ -23,7 +23,7 @@ function BlogPost(props) {
   });
 
   const blogElements = filteredBlog.map((blog, index) => {
-    return <Blog key={index} blog={blog} />;
+    return <Blog key={index} Format={isActive} blog={blog} />;
   });
 
   const result = blogElements.length;
@@ -58,12 +58,11 @@ function BlogPost(props) {
             </p>
           </div>
           <div className="flex flex-row justify-between sm:justify-center items-center relative">
-            <button
-              className="active:ring-1 active:bg-white bg-black"
-              onClick={activeGrid}
-            >
+            <button className="focus:outline-none" onClick={activeGrid}>
               <svg
-                className="w-6 h-6 m-1 cursor-pointer text-gray-500"
+                className={`w-6 h-6 m-1 cursor-pointer
+                   ${isActive[0].Grid ? " text-red-400" : "text-gray-500"}
+                     }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -77,9 +76,11 @@ function BlogPost(props) {
                 />
               </svg>
             </button>
-            <button className="active:light-blue-500" onClick={activeRow}>
+            <button className="focus:outline-none" onClick={activeRow}>
               <svg
-                className="w-6 h-6 m-1 cursor-pointer text-gray-500"
+                className={`w-6 h-6 m-1 cursor-pointer
+                ${isActive[0].Grid ? "text-gray-500" : "text-red-400"}
+                  `}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -101,11 +102,11 @@ function BlogPost(props) {
         </div>
 
         <ul
-          className={
+          className={`grid grid-cols-4 gap-8 mt-10 ${
             isActive[0].Grid
-              ? "grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 py-10 xl:px-0 px-12"
-              : "grid grid-cols-1"
-          }
+              ? "grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 py-10 xl:px-0 px-12"
+              : "grid-cols-4 sm:px-12 py-10"
+          } `}
         >
           {blogElements}
         </ul>

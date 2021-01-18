@@ -20,7 +20,7 @@ function BlogData() {
       title: "ตำลึง! แมวนอนหลับมานานกว่า 50 นาที แต่สุดท้ายฟื้น",
       tag: "ชีวิตประจำวัน",
       thumbnailUrl:
-        "https://res.cloudinary.com/khaokruacooking/image/upload/v1610773824/image/asleep-chibli_k6iez5.jpg?fbclid=IwAR2JhpzZl_zWKNqg-1yS3LhtagiDBuX362RA1xUoz7huFNM4yxnpYZtWlxo",
+        "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/4/44/44539.pic.jpg?1490282217",
       date: "January 18, 2021",
       story: "เจ้าอ้วนกำลังง่วงพอดี เลยคว้ามือถือมาถ่ายไว้ได้ทัน",
     },
