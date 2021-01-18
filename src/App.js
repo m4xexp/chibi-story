@@ -7,6 +7,7 @@ import Dropdown from "./components/Dropdown";
 import React, { useState, useEffect } from "react";
 import Chiblis from "./Data/Chibli";
 import BlogData from "./Data/BlogData";
+import Movie from "./Data/Movie";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ function App() {
       <Home />
       <About />
       <Chiblis />
+      <Movie />
       <Contact />
       <BlogData />
       <Footer />
