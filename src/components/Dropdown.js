@@ -47,6 +47,17 @@ function Dropdown(props) {
         Gallery
       </Link>
       <Link
+        to="blog"
+        className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
+        activeClass="active"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
+        Blog
+      </Link>
+      <Link
         to="contact"
         className="p-4 cursor-pointer hover:bg-gray-100 transition-all ease-in-out"
         activeClass="active"
