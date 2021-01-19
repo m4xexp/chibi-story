@@ -55,7 +55,7 @@ function RandomCat() {
                   className="w-full object-cover"
                 />
               ) : (
-                <LoadingAni />
+                <LoadingAni w={300} h={300} />
               )}
             </figure>
           </li>

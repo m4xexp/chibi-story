@@ -31,8 +31,8 @@ const blogOptions = {
   },
 };
 
-function Loading() {
-  return <Lottie options={loadingOptions} height={300} width={300} />;
+function Loading({ h, w }) {
+  return <Lottie options={loadingOptions} height={h} width={w} />;
 }
 
 export default Loading;

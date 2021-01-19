@@ -6,9 +6,12 @@ import Loading from "./skeLoading";
 function BlogPost(props) {
   const [loading, setloading] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(loading);
-  // }, []);
+  useEffect(() => {
+    console.log(loading);
+    setTimeout(() => {
+      setloading(true);
+    }, 2000);
+  }, []);
 
   const { blogs, Total } = props;
   const [isActive, setIsActive] = useState([
@@ -131,9 +134,9 @@ function BlogPost(props) {
             isActive[0].Grid
               ? "grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 py-10 xl:px-0 px-12"
               : "grid-cols-4 sm:px-12 py-10"
-          } `}
+          }  `}
         >
-          {loading ? blogElements : <Loading />}
+          {!loading ? <Loading w={500} h={900} /> : blogElements}
         </ul>
       </div>
     </section>

@@ -11,8 +11,9 @@ const blogOptions = {
   },
 };
 
-function skeLoading() {
-  return <Lottie options={blogOptions} height={600} width={600} />;
+function skeLoading(props) {
+  const { w, h } = props;
+  return <Lottie options={blogOptions} height={h} width={w} />;
 }
 
 export default skeLoading;

@@ -41,7 +41,6 @@ function App() {
       <RandomCat />
       <Contact />
       <BlogData />
-      <skeLoading />
       <Footer />
     </div>
   );
