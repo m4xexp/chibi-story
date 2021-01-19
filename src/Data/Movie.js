@@ -17,8 +17,8 @@ function Movie() {
   const sendGetRequest = async () => {
     try {
       const resp = await axios.request(options);
-      setMoviesData(resp.data);
-      console.log("Here", resp.data);
+      setMoviesData(resp);
+      console.log("Here", moviesData);
     } catch (err) {
       // Handle Error Here
       console.error(err);

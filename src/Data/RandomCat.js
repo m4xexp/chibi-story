@@ -20,8 +20,8 @@ function RandomCat() {
       setRanCat(resp.data);
       setTimeout(() => {
         setDone(true);
+        setLoading(false);
       }, 2000);
-      setLoading(false);
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -34,7 +34,7 @@ function RandomCat() {
 
   return (
     <section className="blog py-14 bg-white font-kanit" id="randomCat">
-      <div className="container max-w-5xl mx-auto">
+      <div className="container max-w-2xl mx-auto">
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl m-10">
           <span className="block">Random Cat!!</span>
           <span className="block xl:inline" id="">
@@ -42,13 +42,17 @@ function RandomCat() {
           </span>
         </h1>
         <ul className="py-10 px-12 flex flex-col justify-center items-center">
-          <li className="shadow-sm rounded-sm">
-            <figure className="h-auto w-80">
+          <li
+            className={`shadow-sm rounded-sm  ${
+              Loading ? "shadow-none rounded-none" : ""
+            }  `}
+          >
+            <figure className="" style={{ width: 300 + "px" }}>
               {Done ? (
                 <img
-                  src={!Loading ? ranCat.file : ""}
+                  src={!Loading ? ranCat.file : " "}
                   alt=""
-                  className="w-auto"
+                  className="w-full object-cover"
                 />
               ) : (
                 <LoadingAni />
@@ -58,7 +62,7 @@ function RandomCat() {
           <li>
             <button
               onClick={getCat}
-              className="text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-4 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10"
+              className="focus:outline-none text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-4 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10"
             >
               <a className="font-bold">Random!</a>
             </button>

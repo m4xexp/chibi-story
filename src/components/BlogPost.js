@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Blog from "../pages/Blog";
 import SearchBar from "./SearchBar";
+import Loading from "./skeLoading";
 
 function BlogPost(props) {
+  const [loading, setloading] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(loading);
+  // }, []);
+
   const { blogs, Total } = props;
   const [isActive, setIsActive] = useState([
     {
@@ -10,8 +17,6 @@ function BlogPost(props) {
     },
     { Row: false },
   ]);
-
-  //   console.log(isActive[0].Grid);
 
   const [searchBlog, setSearchBlog] = useState("");
   const filteredBlog = blogs.filter((blog) => {
@@ -30,10 +35,18 @@ function BlogPost(props) {
 
   function activeGrid() {
     setIsActive([{ Grid: true }, { Row: false }]);
+    setTimeout(() => {
+      setloading(true);
+    }, 2000);
+    setloading(false);
   }
 
   function activeRow() {
     setIsActive([{ Grid: false }, { Row: true }]);
+    setTimeout(() => {
+      setloading(true);
+    }, 2000);
+    setloading(false);
   }
 
   return (
@@ -58,10 +71,16 @@ function BlogPost(props) {
             </p>
           </div>
           <div className="flex flex-row justify-between sm:justify-center items-center relative">
-            <button className="focus:outline-none" onClick={activeGrid}>
+            <button
+              className={`focus:outline-none ${
+                isActive[0].Grid ? "cursor-default" : ""
+              } `}
+              onClick={activeGrid}
+              disabled={isActive[0].Grid ? true : false}
+            >
               <svg
-                className={`w-6 h-6 m-1 cursor-pointer
-                   ${isActive[0].Grid ? " text-red-400" : "text-gray-500"}
+                className={`w-6 h-6 m-1
+                   ${isActive[0].Grid ? "text-red-400" : "text-gray-500"}
                      }`}
                 fill="none"
                 stroke="currentColor"
@@ -76,9 +95,15 @@ function BlogPost(props) {
                 />
               </svg>
             </button>
-            <button className="focus:outline-none" onClick={activeRow}>
+            <button
+              className={`focus:outline-none ${
+                isActive[1].Row ? "cursor-default" : ""
+              } `}
+              onClick={activeRow}
+              disabled={isActive[1].Row ? true : false}
+            >
               <svg
-                className={`w-6 h-6 m-1 cursor-pointer
+                className={`w-6 h-6 m-1
                 ${isActive[0].Grid ? "text-gray-500" : "text-red-400"}
                   `}
                 fill="none"
@@ -108,7 +133,7 @@ function BlogPost(props) {
               : "grid-cols-4 sm:px-12 py-10"
           } `}
         >
-          {blogElements}
+          {loading ? blogElements : <Loading />}
         </ul>
       </div>
     </section>

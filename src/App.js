@@ -9,6 +9,7 @@ import Chiblis from "./Data/Chibli";
 import BlogData from "./Data/BlogData";
 import Movie from "./Data/Movie";
 import RandomCat from "./Data/RandomCat";
+import skeLoading from "./components/skeLoading";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +38,10 @@ function App() {
       <Home />
       <About />
       <Chiblis />
-      <Movie />
       <RandomCat />
       <Contact />
       <BlogData />
+      <skeLoading />
       <Footer />
     </div>
   );
