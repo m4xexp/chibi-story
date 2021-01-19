@@ -21,12 +21,12 @@ function RandomCat() {
   };
 
   useEffect(() => {
-      lottie.loadAnimation({
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        animationData: require('../static/animation/6890-cat-agent-007.json')
-      })
+    lottie.loadAnimation({
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      animationData: require("../static/animation/6890-cat-agent-007.json"),
+    });
     getCat();
   }, []);
 
@@ -46,10 +46,11 @@ function RandomCat() {
             </figure>
           </li>
           <li>
-            <button onClick={getCat} className="text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-2 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10">
-              <a className="font-bold">
-                Random!
-              </a>
+            <button
+              onClick={getCat}
+              className="text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-2 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10"
+            >
+              <a className="font-bold">Random!</a>
             </button>
           </li>
         </ul>
