@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import lottie from "lottie-web";
+import LoadingAni from "../static/animation/Loading";
+
 function RandomCat() {
   const axios = require("axios").default;
   const [ranCat, setRanCat] = useState("");
+  const [Loading, setLoading] = useState(undefined);
+  const [Done, setDone] = useState(undefined);
 
   const options = {
     method: "GET",
@@ -11,9 +14,14 @@ function RandomCat() {
 
   const getCat = async () => {
     try {
+      setDone(false);
+      setLoading(true);
       const resp = await axios.request(options);
       setRanCat(resp.data);
-      console.log("Cat here", ranCat);
+      setTimeout(() => {
+        setDone(true);
+      }, 2000);
+      setLoading(false);
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -21,12 +29,6 @@ function RandomCat() {
   };
 
   useEffect(() => {
-    lottie.loadAnimation({
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: require("../static/animation/6890-cat-agent-007.json"),
-    });
     getCat();
   }, []);
 
@@ -42,13 +44,21 @@ function RandomCat() {
         <ul className="py-10 px-12 flex flex-col justify-center items-center">
           <li className="shadow-sm rounded-sm">
             <figure className="h-auto w-80">
-              <img src={ranCat.file} alt="" className="w-auto" />
+              {Done ? (
+                <img
+                  src={!Loading ? ranCat.file : ""}
+                  alt=""
+                  className="w-auto"
+                />
+              ) : (
+                <LoadingAni />
+              )}
             </figure>
           </li>
           <li>
             <button
               onClick={getCat}
-              className="text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-2 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10"
+              className="text-yellow-200 hover:text-white w-52 h-20 bg-transparent border-solid border-4 border-yellow-200 hover:bg-yellow-200 transition-all ease-in-out rounded mt-10"
             >
               <a className="font-bold">Random!</a>
             </button>
