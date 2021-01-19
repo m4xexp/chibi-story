@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import Chiblis from "./Data/Chibli";
 import BlogData from "./Data/BlogData";
 import Movie from "./Data/Movie";
+import RandomCat from "./Data/RandomCat";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +38,7 @@ function App() {
       <About />
       <Chiblis />
       <Movie />
+      <RandomCat />
       <Contact />
       <BlogData />
       <Footer />

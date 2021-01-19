@@ -17,7 +17,8 @@ function Movie() {
   const sendGetRequest = async () => {
     try {
       const resp = await axios.request(options);
-      console.log(resp.data.cover);
+      setMoviesData(resp);
+      console.log("Here", setMoviesData);
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -28,11 +29,7 @@ function Movie() {
     sendGetRequest();
   }, []);
 
-  return (
-    <div className="movies rounded ">
-      <p>Hello Movie</p>
-    </div>
-  );
+  return <div className="movies rounded "></div>;
 }
 
 export default Movie;
